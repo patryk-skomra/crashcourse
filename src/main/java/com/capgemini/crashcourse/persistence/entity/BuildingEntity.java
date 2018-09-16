@@ -1,5 +1,6 @@
 package com.capgemini.crashcourse.persistence.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -72,6 +73,9 @@ public class BuildingEntity extends AbstractEntity {
 	}
 
 	public Set<ApartmentEntity> getApartments() {
+		if (apartments == null) {
+			apartments = new HashSet<>();
+		}
 		return apartments;
 	}
 

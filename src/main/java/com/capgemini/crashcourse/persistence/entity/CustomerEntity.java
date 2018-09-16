@@ -20,7 +20,7 @@ public class CustomerEntity extends AbstractEntity {
 	private String email;
 
 	@Column(nullable = false)
-	private String telephoneNrumber;
+	private String telephoneNumber;
 
 	public AddressEntity getAddress() {
 		return address;
@@ -38,12 +38,12 @@ public class CustomerEntity extends AbstractEntity {
 		this.email = email;
 	}
 
-	public String getTelephoneNrumber() {
-		return telephoneNrumber;
+	public String getTelephoneNumber() {
+		return telephoneNumber;
 	}
 
-	public void setTelephoneNrumber(String telephoneNrumber) {
-		this.telephoneNrumber = telephoneNrumber;
+	public void setTelephoneNumber(String telephoneNumber) {
+		this.telephoneNumber = telephoneNumber;
 	}
 
 }
