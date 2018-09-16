@@ -6,13 +6,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "APARTMENT")
-public class ApartmentEntity extends AbstractEntity {
+public class ApartmentEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(nullable = false)
 	private Double area;
@@ -33,9 +38,13 @@ public class ApartmentEntity extends AbstractEntity {
 	@Column(nullable = false)
 	private BigDecimal price;
 
-	@ManyToOne
-	@JoinColumn(name = "CUSTOMER_ID")
-	private CustomerEntity customer;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Double getArea() {
 		return area;
@@ -83,14 +92,6 @@ public class ApartmentEntity extends AbstractEntity {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	public CustomerEntity getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(CustomerEntity customer) {
-		this.customer = customer;
 	}
 
 }
