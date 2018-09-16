@@ -35,7 +35,7 @@ public class ApartmentRepositoryTest {
 		BuildingEntity building = new BuildingEntity();
 		building.setAddress("3-maja");
 		building.setLiftAvailable(true);
-		building.setNumberOfFlats(3);
+		building.setNumberOfFlats(4);
 		building.setNumberOfFloors(2);
 		building.getApartments().add(createApartment(Status.FREE, 75.0));
 		building.getApartments().add(createApartment(Status.FREE, 35.1));
