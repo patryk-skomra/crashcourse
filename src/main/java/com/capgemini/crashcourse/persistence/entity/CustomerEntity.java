@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CUSTOMER")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class CustomerEntity {
 
 	@Id
