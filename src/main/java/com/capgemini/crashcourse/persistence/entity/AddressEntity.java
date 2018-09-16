@@ -1,11 +1,18 @@
 package com.capgemini.crashcourse.persistence.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ADDRESS")
-public class AddressEntity extends AbstractEntity {
+public class AddressEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	private String city;
 
@@ -14,6 +21,14 @@ public class AddressEntity extends AbstractEntity {
 	private String addressLine2;
 
 	private String postalCode;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getCity() {
 		return city;
